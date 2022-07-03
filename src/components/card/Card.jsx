@@ -1,9 +1,10 @@
 import React from 'react';
-
-const Card = () => {
+import './card.scss'
+const Card = ({card,cardMenu}) => {
     return (
-        <div>
-            
+        <div className='card'>
+            <div>{cardMenu}</div>
+            <span>{card.num}</span>
         </div>
     );
 };

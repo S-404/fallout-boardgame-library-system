@@ -1,0 +1,12 @@
+.card{
+  border: 1px solid gray;
+  border-radius: 1em;
+  margin: 0 .1em;
+  width: 9em;
+  height: 13.5em;
+  transition: transform ease-in .3s;
+  &:hover{
+    transform: scale(2);
+    transition: transform ease-in .1s;
+  }
+}
