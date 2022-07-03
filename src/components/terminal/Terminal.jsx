@@ -14,6 +14,7 @@ const Terminal = () => {
     const [stagedCards, setStagedCards] = useState([])
     const [trash, setTrash] = useState([])
     const [playersQty, setPlayersQty] = useState(2)
+    const [selectedCard, setSelectedCard] = useState([])
 
 
     const defineSetCollection = (collection) => {
@@ -30,6 +31,8 @@ const Terminal = () => {
                 return setStagedCards;
             case trash:
                 return setTrash;
+            case selectedCard:
+                return setSelectedCard;
         }
     }
 
@@ -64,14 +67,14 @@ const Terminal = () => {
         return removedCard
     }
 
-    const addCard = (card) => {
-        const removedCard = removeCardFromCollection(card.id, questsDeck);
+    const addCardFrom = (card, fromCollection) => {
+        const removedCard = removeCardFromCollection(card.id, fromCollection);
         const toCollection = defineCollectionByCardType(card.type)
-        const sliceIndex = Math.max(toCollection.length - playersQty,0)
+        const sliceIndex = Math.max(toCollection.length - playersQty, 0)
         const latestCardsInCollection = toCollection.slice(sliceIndex)
         latestCardsInCollection.push(removedCard)
         const shuffled = shuffleCards(latestCardsInCollection)
-        defineSetCollection(toCollection)([...toCollection.slice(0,sliceIndex), ...shuffled])
+        defineSetCollection(toCollection)([...toCollection.slice(0, sliceIndex), ...shuffled])
     }
 
     const stageCardFrom = (card, fromCollection) => {
@@ -79,9 +82,20 @@ const Terminal = () => {
         setStagedCards([...stagedCards, removedCard])
     }
 
-    const stageEncounterCard = (deck) =>{
-        if(deck[0]?.type !== 'quest'){
-            stageCardFrom(deck[deck.length -1],deck)
+    const moveCardToTrashFrom = (card,fromCollection) =>{
+        const removedCard = removeCardFromCollection(card.id, fromCollection);
+        setTrash([...trash, removedCard])
+    }
+
+    const selectEncounterCard = (deck) => {
+        if (deck !== questsDeck && deck.length) {
+            if (selectedCard[0]?.id) {
+                window.alert('you must first play the selected card')
+                return
+            }
+            const card = deck.slice(deck.length - 1)[0]
+            const removedCard = removeCardFromCollection(card.id, deck);
+            setSelectedCard([removedCard])
         }
     }
 
@@ -91,13 +105,17 @@ const Terminal = () => {
     return (
         <Context.Provider value={{
             playersQty, setPlayersQty,
-            stageCardFrom, addCard, stageEncounterCard,
             questsDeck,
             wastelandDeck,
             settlementDeck,
             vaultDeck,
             stagedCards,
+            selectedCard,
             trash,
+            stageCardFrom,
+            addCardFrom,
+            selectEncounterCard,
+            moveCardToTrashFrom,
         }}>
             <div>
                 <div className="overlay"></div>

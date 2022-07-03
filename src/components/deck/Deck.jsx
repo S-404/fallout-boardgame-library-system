@@ -3,10 +3,10 @@ import "./deck.scss"
 import {Context} from "../../store/context";
 const Deck = ({backImg, name, menu, deck}) => {
 
-    const {stageEncounterCard} = useContext(Context)
+    const {selectEncounterCard} = useContext(Context)
 
     const onClickHandler = () =>{
-        stageEncounterCard(deck)
+        selectEncounterCard(deck)
     }
 
     if(!deck.length) return null

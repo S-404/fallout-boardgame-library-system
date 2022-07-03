@@ -8,7 +8,7 @@ const QuestCardsArea = () => {
 
     const [cardNum, setCardNum] = useState('000')
     const [selectedCard, setSelectedCard] = useState(null)
-    const {questsDeck, addCard, stageCardFrom} = useContext(Context)
+    const {questsDeck, addCardFrom, stageCardFrom} = useContext(Context)
 
     const onInputChange = (e) => {
         setCardNum(e.target.value)
@@ -21,7 +21,7 @@ const QuestCardsArea = () => {
     }
 
     const addButtonHandler = () => {
-        addCard(selectedCard)
+        addCardFrom(selectedCard,questsDeck)
     }
 
 
