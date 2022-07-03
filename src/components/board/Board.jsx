@@ -3,6 +3,7 @@ import QuestCardsArea from "./QuestCardsArea";
 import TrashArea from "./TrashArea";
 import EncounterCardsArea from "./EncounterCardsArea";
 import './board.scss'
+import StagedCardsArea from "./StagedCardsArea";
 
 
 const Board = () => {
@@ -12,7 +13,7 @@ const Board = () => {
                 <QuestCardsArea/>
                 <EncounterCardsArea/>
             </div>
-
+            <StagedCardsArea/>
             <TrashArea/>
 
             <ul>
