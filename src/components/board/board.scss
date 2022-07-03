@@ -1,18 +1,25 @@
 .board-container {
   display: flex;
   flex-direction: column;
+  margin-top: 5em;
   .board-container__decks{
     display: flex;
     flex-direction: row;
+    min-height: 14em;
     .decks__encounter-cards{
       display: flex;
       flex-direction: row;
     }
   }
-  .board-container__deck-menu{
-    min-height: 13em;
+  .board-container__staged-cards{
+    max-width: 60em;
+    margin-top: 2em;
+    border-radius: 1em;
     padding: 1em;
-    border-radius: .5em;
-    border: 1px solid gray;
+    border: 1px gray solid;
+    min-height: 14em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
