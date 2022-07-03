@@ -4,6 +4,7 @@ import TrashArea from "../boardAreas/TrashArea";
 import EncounterCardsArea from "../boardAreas/EncounterCardsArea";
 import './board.scss'
 import StagedCardsArea from "../boardAreas/StagedCardsArea";
+import SelectedCardArea from "../boardAreas/SelectedCardArea";
 
 
 const Board = () => {
@@ -12,7 +13,9 @@ const Board = () => {
             <div className='board-container__decks'>
                 <QuestCardsArea/>
                 <EncounterCardsArea/>
+                <SelectedCardArea/>
             </div>
+
             <StagedCardsArea/>
             <TrashArea/>
 
