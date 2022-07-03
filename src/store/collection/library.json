@@ -1,0 +1,105 @@
+{
+  "cardCollection":
+  [
+    {
+      "id": 1,
+      "num": "001",
+      "type": "quest"
+    },
+    {
+      "id": 2,
+      "num": "002",
+      "type": "wasteland"
+    },
+    {
+      "id": 3,
+      "num": "003",
+      "type": "settlement"
+    },
+    {
+      "id": 4,
+      "num": "004",
+      "type": "vault"
+    },
+    {
+      "id": 5,
+      "num": "005",
+      "type": "quest"
+    },
+    {
+      "id": 6,
+      "num": "006",
+      "type": "wasteland"
+    },
+    {
+      "id": 7,
+      "num": "007",
+      "type": "settlement"
+    },
+    {
+      "id": 8,
+      "num": "008",
+      "type": "vault"
+    },
+    {
+      "id": 9,
+      "num": "009",
+      "type": "quest"
+    },
+    {
+      "id": 10,
+      "num": "010",
+      "type": "wasteland"
+    },
+    {
+      "id": 11,
+      "num": "011",
+      "type": "settlement"
+    },
+    {
+      "id": 12,
+      "num": "012",
+      "type": "vault"
+    },
+    {
+      "id": 13,
+      "num": "013",
+      "type": "quest"
+    },
+    {
+      "id": 14,
+      "num": "014",
+      "type": "wasteland"
+    },
+    {
+      "id": 15,
+      "num": "015",
+      "type": "settlement"
+    },
+    {
+      "id": 16,
+      "num": "016",
+      "type": "vault"
+    },
+    {
+      "id": 17,
+      "num": "017",
+      "type": "quest"
+    },
+    {
+      "id": 18,
+      "num": "018",
+      "type": "wasteland"
+    },
+    {
+      "id": 19,
+      "num": "019",
+      "type": "settlement"
+    },
+    {
+      "id": 20,
+      "num": "020",
+      "type": "vault"
+    }
+  ]
+}
