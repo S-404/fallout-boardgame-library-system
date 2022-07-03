@@ -79,13 +79,19 @@ const Terminal = () => {
         setStagedCards([...stagedCards, removedCard])
     }
 
+    const stageEncounterCard = (deck) =>{
+        if(deck[0]?.type !== 'quest'){
+            stageCardFrom(deck[deck.length -1],deck)
+        }
+    }
+
     useEffect(() => setQuestsDeck(cardCollection.cardCollection), [])
 
 
     return (
         <Context.Provider value={{
             playersQty, setPlayersQty,
-            stageCardFrom, addCard,
+            stageCardFrom, addCard, stageEncounterCard,
             questsDeck,
             wastelandDeck,
             settlementDeck,

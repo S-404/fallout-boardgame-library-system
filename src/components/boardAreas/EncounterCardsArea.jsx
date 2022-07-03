@@ -10,9 +10,21 @@ const EncounterCardsArea = () => {
     const {wastelandDeck,settlementDeck,vaultDeck} = useContext(Context)
     return (
         <div className='decks__encounter-cards'>
-            <Deck name='Wasteland' backImg={wastelandCardBack} deck={wastelandDeck}/>
-            <Deck name='Settlement' backImg={settlementCardBack} deck={settlementDeck}/>
-            <Deck name='Vault' backImg={vaultCardBack} deck={vaultDeck}/>
+            <Deck
+                name='Wasteland'
+                backImg={wastelandCardBack}
+                deck={wastelandDeck}
+            />
+            <Deck
+                name='Settlement'
+                backImg={settlementCardBack}
+                deck={settlementDeck}
+            />
+            <Deck
+                name='Vault'
+                backImg={vaultCardBack}
+                deck={vaultDeck}
+            />
         </div>
     );
 };
