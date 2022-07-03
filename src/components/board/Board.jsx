@@ -1,5 +1,5 @@
 import React from 'react';
-import LibraryArea from "./LibraryArea";
+import QuestCardsArea from "./QuestCardsArea";
 import TrashArea from "./TrashArea";
 import EncounterCardsArea from "./EncounterCardsArea";
 import './board.scss'
@@ -9,7 +9,7 @@ const Board = () => {
     return (
         <div className='board-container'>
             <div className='board-container__decks'>
-                <LibraryArea/>
+                <QuestCardsArea/>
                 <EncounterCardsArea/>
             </div>
 
