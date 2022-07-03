@@ -6,12 +6,14 @@ import {Context} from "../../store/context";
 
 const QuestCardsArea = () => {
 
-    const [selectedCard, setSelectedCard] = useState({id:0, num:'000'})
-    const {questsDeck,addCard, stageCardFrom} = useContext(Context)
+    const [cardNum, setCardNum] = useState('000')
+    const [selectedCard, setSelectedCard] = useState(null)
+    const {questsDeck, addCard, stageCardFrom} = useContext(Context)
 
     const onInputChange = (e) => {
-        const cardIndex = questsDeck.findIndex(card=>card.num === e.target.value.padStart(3,'0'))
-        setSelectedCard(questsDeck[cardIndex])
+        setCardNum(e.target.value)
+        const cardIndex = questsDeck.findIndex(card => card.num === e.target.value.padStart(3,'0'))
+        setSelectedCard(cardIndex !== -1 ? questsDeck[cardIndex] : null)
     }
 
     const stageButtonHandler = () => {
@@ -23,23 +25,22 @@ const QuestCardsArea = () => {
     }
 
 
-
     const questCardsMenu = () => {
         return (
             <div className='menu__menu-inputs'>
                 <input
                     className='menu-inputs__input'
-                    type='number'
-                    min='1'
-                    max='222'
+                    placeholder='card num'
                     maxLength='3'
-                    value={selectedCard.num}
+                    value={cardNum}
                     onChange={onInputChange}
                 />
                 <div className='menu-inputs__buttons'>
-                    {selectedCard.type === 'quest' ?
-                        <button onClick={stageButtonHandler}>Stage</button>:
-                        <button onClick={addButtonHandler}>Add</button>
+                    {selectedCard === null ? 'not found' :
+                        selectedCard?.type === 'quest' ?
+                            <button onClick={stageButtonHandler}>Stage</button> :
+
+                            <button onClick={addButtonHandler}>Add</button>
                     }
 
                 </div>
