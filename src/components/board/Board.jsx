@@ -1,9 +1,9 @@
 import React from 'react';
-import QuestCardsArea from "./QuestCardsArea";
-import TrashArea from "./TrashArea";
-import EncounterCardsArea from "./EncounterCardsArea";
+import QuestCardsArea from "../boardAreas/QuestCardsArea";
+import TrashArea from "../boardAreas/TrashArea";
+import EncounterCardsArea from "../boardAreas/EncounterCardsArea";
 import './board.scss'
-import StagedCardsArea from "./StagedCardsArea";
+import StagedCardsArea from "../boardAreas/StagedCardsArea";
 
 
 const Board = () => {

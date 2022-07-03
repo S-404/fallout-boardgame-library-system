@@ -41,6 +41,9 @@
       .menu-inputs__buttons{
         display: flex;
         flex-direction: row;
+        button{
+          width: 100%;
+        }
       }
     }
   }
