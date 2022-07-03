@@ -4,6 +4,7 @@ import MyNavbar from "../UI/MyNavbar";
 import Board from "../board/Board";
 import cardCollection from '../../store/collection/library.json'
 import {Context} from '../../store/context'
+
 const Terminal = () => {
 
     const [questsDeck, setQuestsDeck] = useState([])
@@ -32,22 +33,32 @@ const Terminal = () => {
         }
     }
 
-    const defineCollectionByCardType = (type) =>{
+    const defineCollectionByCardType = (type) => {
         switch (type) {
-            case 'quest':
-                return questsDeck;
             case 'wasteland':
                 return wastelandDeck;
             case 'settlement':
                 return settlementDeck;
             case 'vault':
                 return vaultDeck;
+            default:
+                return stagedCards;
         }
+    }
+
+    const shuffleCards = (cards) => {
+        let currentIndex = cards.length, randomIndex;
+        while (currentIndex !== 0) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+            [cards[currentIndex], cards[randomIndex]] = [
+                cards[randomIndex], cards[currentIndex]];
+        }
+        return cards
     }
 
     const removeCardFromCollection = (cardId, collection) => {
         const removedCard = collection.filter((card) => card.id === cardId)[0]
-        console.log(removedCard)
         const newCollection = collection.filter((card) => card.id !== removedCard.id)
         defineSetCollection(collection)([...newCollection])
         return removedCard
@@ -56,17 +67,19 @@ const Terminal = () => {
     const addCard = (card) => {
         const removedCard = removeCardFromCollection(card.id, questsDeck);
         const toCollection = defineCollectionByCardType(card.type)
-        defineSetCollection(toCollection)([...toCollection, removedCard])
+        const sliceIndex = Math.max(toCollection.length - playersQty,0)
+        const latestCardsInCollection = toCollection.slice(sliceIndex)
+        latestCardsInCollection.push(removedCard)
+        const shuffled = shuffleCards(latestCardsInCollection)
+        defineSetCollection(toCollection)([...toCollection.slice(0,sliceIndex), ...shuffled])
     }
 
     const stageCardFrom = (card, fromCollection) => {
-        console.log(card)
         const removedCard = removeCardFromCollection(card.id, fromCollection);
-        console.log(removedCard)
         setStagedCards([...stagedCards, removedCard])
     }
 
-    useEffect(()=>setQuestsDeck(cardCollection.cardCollection),[])
+    useEffect(() => setQuestsDeck(cardCollection.cardCollection), [])
 
 
     return (
