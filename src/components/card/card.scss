@@ -1,20 +1,25 @@
+$card-width: 13em;
+$card-height: 20em;
+
 .card{
   //border: 1px solid black;
   border-radius: .5em;
-  margin: 0 .1em;
-  width: 9.4em;
-  height: 15.1em;
+  margin: .1em;
+  width: $card-width + .5em;
+  height: $card-height + 1.6em;
   transition: transform ease-in .3s;
   background-color: rgba(128, 128, 128, 0.43);
   //transform: scale(1.5);
   &:hover{
-    transform: scale(2.5);
+    transform: scale(1.7);
     transition: transform ease-in .1s;
+    background-color: #00dd00;
+    z-index: 3;
   }
   .card__card-image-div{
     position: relative;
-    width: 9em;
-    height: 13.5em;
+    width: $card-width;
+    height: $card-height;
     margin-left: auto;
     margin-right: auto;
     .card-image-div__image{

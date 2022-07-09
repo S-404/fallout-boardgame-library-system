@@ -1,18 +1,21 @@
+@import "src/components/card/card";
+
 @mixin cards-div(){
   max-width: 60em;
-  min-width: 12em;
+  min-width: $card-width + 2.5em ;
+  min-height: $card-height + 4em;
   border-radius: 1em;
   padding: 1em;
   border: 1px gray solid;
-  min-height: 14em;
   margin: 1em .5em;
   position: relative;
+
+  transition: all ease-in .3s;
 }
 
 .board-container {
   display: flex;
   flex-direction: column;
-  margin-top: 5em;
   .board-container__decks{
     display: flex;
     flex-direction: row;
@@ -25,14 +28,20 @@
   .board-container__cards{
     display: flex;
     flex-direction: row;
+    //z-index: 0;
+
     .cards__selected-card{
       @include cards-div;
+      max-height: $card-height + 4em;
+      z-index: 1;
     }
+
     .cards__staged-cards{
       @include cards-div;
       display: flex;
       flex-direction: row;
-      //flex-wrap: wrap;
+      flex-wrap: wrap;
+      //z-index: 1;
     }
     .cards__header{
       position: absolute;
