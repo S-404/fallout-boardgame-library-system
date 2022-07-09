@@ -2,10 +2,26 @@ import React from 'react';
 import './card.scss'
 import CardMenu from "./CardMenu";
 
-const Card = ({card, collection, title}) => {
+const Card = ({card, collection}) => {
+
+    const image = () =>{
+        try{
+            return require(`../../assets/cards/libraryCards/${card.num}.png`)
+        }catch (e){
+            return ''
+        }
+    }
+
     return (
         <div className='card'>
-            <CardMenu card={card} collection={collection} title={title}/>
+            <CardMenu card={card} collection={collection}/>
+            <div className='card__card-image-div'>
+                <img
+                    className='card-image-div__image'
+                    src={image()}
+                    alt={`card ${card.num}`}
+                />
+            </div>
         </div>
     );
 };

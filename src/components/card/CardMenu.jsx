@@ -19,8 +19,6 @@ const CardMenu = ({title, card, collection}) => {
     return (
         <div>
 
-            <h5>{title}</h5>
-
             <button onClick={trashButtonHandler}>trash</button>
 
             {collection !== stagedCards ?
