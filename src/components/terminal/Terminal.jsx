@@ -88,16 +88,24 @@ const Terminal = () => {
     }
 
     const selectEncounterCard = (deck) => {
+        if (deck.length) {
+            const card = deck.slice(deck.length - 1)[0]
+            selectCardFrom(card,deck)
+        }
+    }
+
+    const selectCardFrom = (card,deck)=>{
         if (deck !== questsDeck && deck.length) {
             if (selectedCard[0]?.id) {
                 window.alert('you must first play the selected card')
                 return
             }
-            const card = deck.slice(deck.length - 1)[0]
             const removedCard = removeCardFromCollection(card.id, deck);
             setSelectedCard([removedCard])
         }
     }
+
+
 
     useEffect(() => setQuestsDeck(cardCollection.cardCollection), [])
 
@@ -115,6 +123,7 @@ const Terminal = () => {
             stageCardFrom,
             addCardFrom,
             selectEncounterCard,
+            selectCardFrom,
             moveCardToTrashFrom,
         }}>
             <div>
