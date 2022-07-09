@@ -1,10 +1,10 @@
 import React from 'react';
-import QuestCardsArea from "../boardAreas/QuestCardsArea";
-import TrashArea from "../boardAreas/TrashArea";
-import EncounterCardsArea from "../boardAreas/EncounterCardsArea";
+import QuestCardsArea from "../boardAreas/questCardsArea/QuestCardsArea";
+import TrashArea from "../boardAreas/trashArea/TrashArea";
+import EncounterCardsArea from "../boardAreas/encounterCardsArea/EncounterCardsArea";
 import './board.scss'
-import StagedCardsArea from "../boardAreas/StagedCardsArea";
-import SelectedCardArea from "../boardAreas/SelectedCardArea";
+import StagedCardsArea from "../boardAreas/stagedCardsArea/StagedCardsArea";
+import SelectedCardArea from "../boardAreas/selectedCardArea/SelectedCardArea";
 
 
 const Board = () => {

@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
-import {Context} from "../../store/context";
-import MyAccordion from "../UI/myAccordion/MyAccordion";
+import {Context} from "../../../store/context";
+import MyAccordion from "../../UI/myAccordion/MyAccordion";
 
 const TrashArea = () => {
     const {trash} = useContext(Context)

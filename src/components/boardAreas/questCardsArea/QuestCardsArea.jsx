@@ -1,8 +1,8 @@
 import React, {useState, useContext} from 'react';
-import Deck from "../deck/Deck";
-import questImg from '../../assets/questCardBack.png'
+import Deck from "../../deck/Deck";
+import questImg from '../../../assets/questCardBack.png'
 
-import {Context} from "../../store/context";
+import {Context} from "../../../store/context";
 
 const QuestCardsArea = () => {
 

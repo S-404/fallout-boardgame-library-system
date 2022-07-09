@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
-import {Context} from "../../store/context";
-import Card from "../card/Card";
+import {Context} from "../../../store/context";
+import Card from "../../card/Card";
 
 const SelectedCardArea = () => {
 

@@ -1,10 +1,10 @@
 import React , {useContext} from 'react';
-import Deck from "../deck/Deck";
-import vaultCardBack from '../../assets/vaultCardBack.png'
-import settlementCardBack from '../../assets/settlementCardBack.png'
-import wastelandCardBack from '../../assets/wastelandCardBack.png'
+import Deck from "../../deck/Deck";
+import vaultCardBack from '../../../assets/vaultCardBack.png'
+import settlementCardBack from '../../../assets/settlementCardBack.png'
+import wastelandCardBack from '../../../assets/wastelandCardBack.png'
 
-import {Context} from "../../store/context";
+import {Context} from "../../../store/context";
 
 const EncounterCardsArea = () => {
     const {wastelandDeck,settlementDeck,vaultDeck} = useContext(Context)
