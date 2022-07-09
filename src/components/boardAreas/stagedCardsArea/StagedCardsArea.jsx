@@ -5,7 +5,7 @@ import Card from "../../card/Card";
 const StagedCardsArea = () => {
     const {stagedCards} = useContext(Context)
     return (
-        <div className='board-container__staged-cards'>
+        <>
             {stagedCards.map(card=>(
                 <Card
                     key={card.id}
@@ -14,7 +14,7 @@ const StagedCardsArea = () => {
                     title={card.num}
                 />
             ))}
-        </div>
+        </>
     );
 };
 
