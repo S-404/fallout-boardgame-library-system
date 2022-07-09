@@ -1,10 +1,11 @@
 import React from 'react';
 import './card.scss'
-const Card = ({card,cardMenu}) => {
+import CardMenu from "./CardMenu";
+
+const Card = ({card, collection, title}) => {
     return (
         <div className='card'>
-            <div>{cardMenu}</div>
-            <span>{card.num}</span>
+            <CardMenu card={card} collection={collection} title={title}/>
         </div>
     );
 };

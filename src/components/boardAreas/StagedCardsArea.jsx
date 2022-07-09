@@ -10,6 +10,8 @@ const StagedCardsArea = () => {
                 <Card
                     key={card.id}
                     card={card}
+                    collection={stagedCards}
+                    title={card.num}
                 />
             ))}
         </div>

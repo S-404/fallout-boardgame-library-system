@@ -1,10 +1,11 @@
 .card{
-  border: 1px solid gray;
+  border: 1px solid black;
   border-radius: 1em;
   margin: 0 .1em;
   width: 9em;
   height: 13.5em;
   transition: transform ease-in .3s;
+  background-color: gray;
   &:hover{
     transform: scale(2);
     transition: transform ease-in .1s;
