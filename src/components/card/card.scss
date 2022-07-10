@@ -29,4 +29,10 @@ $card-height: 20em;
       border-radius: .5em;
     }
   }
+  .card__card-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 }

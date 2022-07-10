@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import {Context} from "../../../store/context";
+import Marker from "./Marker";
 
 const CardMenu = ({card, collection}) => {
 
@@ -17,7 +18,7 @@ const CardMenu = ({card, collection}) => {
     }
 
     return (
-        <div>
+        <div className='card__card-menu'>
 
             <button onClick={trashButtonHandler}>trash</button>
 
@@ -29,6 +30,8 @@ const CardMenu = ({card, collection}) => {
             {card.type !== 'quest' ?
                 <button onClick={addButtonHandler}>add</button>
                 : null}
+
+            <Marker/>
 
         </div>
     );
