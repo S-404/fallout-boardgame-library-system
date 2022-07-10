@@ -1,6 +1,6 @@
 import React from 'react';
 import './card.scss'
-import CardMenu from "./CardMenu";
+import CardMenu from "./cardMenu/CardMenu";
 
 const Card = ({card, collection}) => {
 

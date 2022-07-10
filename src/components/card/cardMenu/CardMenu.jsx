@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
-import {Context} from "../../store/context";
+import {Context} from "../../../store/context";
 
-const CardMenu = ({title, card, collection}) => {
+const CardMenu = ({card, collection}) => {
 
     const {stagedCards, addCardFrom, stageCardFrom, moveCardToTrashFrom} = useContext(Context)
 
