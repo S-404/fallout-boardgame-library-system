@@ -4,6 +4,8 @@ import MyNavbar from "../UI/MyNavbar";
 import Board from "../board/Board";
 import cardCollection from '../../store/collection/library.json'
 import {Context} from '../../store/context'
+import MyModal from "../UI/myModal/MyModal";
+import GameSettings from "../gameSettings/GameSettings";
 
 const Terminal = () => {
 
@@ -15,7 +17,7 @@ const Terminal = () => {
     const [trash, setTrash] = useState([])
     const [playersQty, setPlayersQty] = useState(2)
     const [selectedCard, setSelectedCard] = useState([])
-
+    const [settingsModal, setSettingsModal] = useState(true)
 
     const defineSetCollection = (collection) => {
         switch (collection) {
@@ -125,6 +127,7 @@ const Terminal = () => {
             selectEncounterCard,
             selectCardFrom,
             moveCardToTrashFrom,
+            setSettingsModal,
         }}>
             <div>
                 <div className="overlay"></div>
@@ -135,7 +138,12 @@ const Terminal = () => {
                         <MyNavbar/>
                         <p className="clear"><br/></p>
                         <Board/>
-
+                        <MyModal
+                            visible={settingsModal}
+                            setVisible={setSettingsModal}
+                            children={<GameSettings/>}
+                            title={'Settings'}
+                        />
                     </div>
                 </div>
             </div>
