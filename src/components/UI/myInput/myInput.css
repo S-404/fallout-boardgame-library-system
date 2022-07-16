@@ -1,0 +1,19 @@
+.my-input {
+    /*width: 100%;*/
+    position: relative;
+}
+
+.my-input .my-input__input {
+    border-radius: .5em;
+    width: 10em;
+    padding: 1em 0 .2em;
+    text-align: center;
+}
+.my-input .my-input__label {
+    position: absolute;
+    left: .5em;
+    top: .1em;
+    color: #999;
+    white-space: nowrap;
+    font-size: .6em;
+}
