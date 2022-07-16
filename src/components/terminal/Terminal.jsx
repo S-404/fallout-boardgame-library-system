@@ -12,12 +12,14 @@ const Terminal = () => {
     const [questsDeck, setQuestsDeck] = useState([])
     const [wastelandDeck, setWastelandDeck] = useState([])
     const [settlementDeck, setSettlementDeck] = useState([])
-    const [vaultDeck, setVaultDeck] = useState([])
+    const [vault84Deck, setVault84Deck] = useState([])
     const [stagedCards, setStagedCards] = useState([])
     const [trash, setTrash] = useState([])
     const [playersQty, setPlayersQty] = useState(2)
     const [selectedCard, setSelectedCard] = useState([])
     const [settingsModal, setSettingsModal] = useState(true)
+
+
 
     const defineSetCollection = (collection) => {
         switch (collection) {
@@ -27,8 +29,8 @@ const Terminal = () => {
                 return setWastelandDeck;
             case settlementDeck:
                 return setSettlementDeck;
-            case vaultDeck:
-                return setVaultDeck;
+            case vault84Deck:
+                return setVault84Deck;
             case stagedCards:
                 return setStagedCards;
             case trash:
@@ -44,8 +46,8 @@ const Terminal = () => {
                 return wastelandDeck;
             case 'settlement':
                 return settlementDeck;
-            case 'vault':
-                return vaultDeck;
+            case 'vault84':
+                return vault84Deck;
             default:
                 return stagedCards;
         }
@@ -118,7 +120,7 @@ const Terminal = () => {
             questsDeck,
             wastelandDeck,
             settlementDeck,
-            vaultDeck,
+            vault84Deck,
             stagedCards,
             selectedCard,
             trash,
@@ -130,7 +132,7 @@ const Terminal = () => {
             setSettingsModal,
         }}>
             <div>
-                <div className="overlay"></div>
+                <div className="overlay"/>
                 {/*<div className="scanline"></div>*/}
                 <div className="wrapper">
                     <div className="content clearfix">
