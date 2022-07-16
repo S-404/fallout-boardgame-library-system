@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 // import './terminal.css'
-import MyNavbar from "../UI/MyNavbar";
+import MyNavbar from "../UI/myNavbar/MyNavbar";
 import Board from "../board/Board";
 import cardCollection from '../../store/collection/library.json'
 import {Context} from '../../store/context'
