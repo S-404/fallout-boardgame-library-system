@@ -1,0 +1,40 @@
+.my-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  overflow-y: unset;
+
+  .my-modal__content {
+    position: relative;
+    background: white;
+    border-radius: .5em;
+    padding: 1em;
+    min-width: 40em;
+    min-height: 50%;
+    top: 1em;
+
+    .content__header {
+      display: flex;
+      flex-direction: row;
+      padding: 0 .1em 1em;
+    }
+
+    .content__body {
+    }
+  }
+
+  &.active {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+
+
+
