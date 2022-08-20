@@ -1,16 +1,18 @@
-import React,{useContext,useState}  from 'react';
-import {Context} from "../../../store/context";
+import React, {useState} from 'react';
+import CardsController from "../../../store/cardsController";
+import {observer} from "mobx-react-lite";
 
-const QuestCardsMenu = () => {
+
+const QuestCardsMenu = observer (() => {
 
     const [cardNum, setCardNum] = useState('000')
     const [selectedCard, setSelectedCard] = useState(null)
-    const {questsDeck, addCardFrom, stageCardFrom} = useContext(Context)
+    const {questsDeck, addCardFrom, stageCardFrom} = CardsController
 
 
     const onInputChange = (e) => {
         setCardNum(e.target.value)
-        const cardIndex = questsDeck.findIndex(card => card.num === e.target.value.padStart(3,'0'))
+        const cardIndex = questsDeck.findIndex(card => card.num === e.target.value.padStart(3, '0'))
         setSelectedCard(cardIndex !== -1 ? questsDeck[cardIndex] : null)
     }
 
@@ -47,6 +49,6 @@ const QuestCardsMenu = () => {
 
         </div>
     )
-};
+});
 
 export default QuestCardsMenu;

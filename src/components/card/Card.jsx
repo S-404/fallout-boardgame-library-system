@@ -4,10 +4,10 @@ import CardMenu from "./cardMenu/CardMenu";
 
 const Card = ({card, collection}) => {
 
-    const image = () =>{
-        try{
+    const image = () => {
+        try {
             return require(`../../assets/cards/libraryCards/${card.num}.png`)
-        }catch (e){
+        } catch (e) {
             return ''
         }
     }

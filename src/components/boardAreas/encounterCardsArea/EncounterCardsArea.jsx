@@ -1,13 +1,14 @@
-import React , {useContext} from 'react';
+import React from 'react';
 import Deck from "../../deck/Deck";
 import vault84CardBack from '../../../assets/vault84CardBack.png'
 import settlementCardBack from '../../../assets/settlementCardBack.png'
 import wastelandCardBack from '../../../assets/wastelandCardBack.png'
+import CardsController from "../../../store/cardsController";
+import {observer} from "mobx-react-lite";
 
-import {Context} from "../../../store/context";
 
-const EncounterCardsArea = () => {
-    const {wastelandDeck,settlementDeck,vault84Deck} = useContext(Context)
+const EncounterCardsArea = observer(() => {
+    const {wastelandDeck, settlementDeck, vault84Deck} = CardsController
     return (
         <div className='decks__encounter-cards'>
             <Deck
@@ -27,6 +28,6 @@ const EncounterCardsArea = () => {
             />
         </div>
     );
-};
+});
 
 export default EncounterCardsArea;

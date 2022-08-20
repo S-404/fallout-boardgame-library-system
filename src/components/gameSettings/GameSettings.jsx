@@ -1,11 +1,12 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import MyInput from "../UI/myInput/MyInput";
-import {Context} from "../../store/context";
 import MySelect from "../UI/mySelect/MySelect";
+import CardsController from "../../store/cardsController";
+import {observer} from "mobx-react-lite";
 
-const GameSettings = () => {
+const GameSettings = observer( () => {
 
-    const {playersQty, setPlayersQty} = useContext(Context)
+    const {playersQty, setPlayersQty} = CardsController
 
     const inputPlayersQtyHandler = (e) => {
         const newValue = +e.target.value
@@ -14,18 +15,14 @@ const GameSettings = () => {
     }
 
     const scenarios = [
-        {name:'first', value: 'first'},
-        {name:'second', value: 'second'},
-        {name:'third', value: 'third'},
-        {name:'fourth', value: 'fourth'},
+        {name: 'first', value: 'first'},
+        {name: 'second', value: 'second'},
+        {name: 'third', value: 'third'},
+        {name: 'fourth', value: 'fourth'},
     ]
 
     return (
         <div>
-            game settings
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
             <div>
                 <MyInput
                     type='number'
@@ -42,6 +39,6 @@ const GameSettings = () => {
             </div>
         </div>
     );
-};
+});
 
 export default GameSettings;

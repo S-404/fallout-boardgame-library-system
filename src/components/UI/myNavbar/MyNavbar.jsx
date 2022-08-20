@@ -1,9 +1,9 @@
-import React, {useContext} from 'react';
-import {Context} from "../../../store/context";
+import React from 'react';
+import SettingsController from "../../../store/settingsController";
 
 const MyNavbar = () => {
 
-    const {setSettingsModal} = useContext(Context)
+    const {setSettingsModal} = SettingsController
 
     return (
         <div>

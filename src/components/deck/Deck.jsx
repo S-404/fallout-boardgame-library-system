@@ -1,15 +1,17 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import "./deck.scss"
-import {Context} from "../../store/context";
-const Deck = ({backImg, name, menu, deck}) => {
+import CardsController from "../../store/cardsController";
+import {observer} from "mobx-react-lite";
 
-    const {selectEncounterCard} = useContext(Context)
+const Deck = observer ( ({backImg, name, menu, deck}) => {
 
-    const onClickHandler = () =>{
+    const {selectEncounterCard} = CardsController
+
+    const onClickHandler = () => {
         selectEncounterCard(deck)
     }
 
-    if(!deck.length) return null
+    if (!deck.length) return null
 
     return (
 
@@ -21,6 +23,6 @@ const Deck = ({backImg, name, menu, deck}) => {
             <div className='deck__menu'>{menu}</div>
         </div>
     );
-};
+});
 
 export default Deck;

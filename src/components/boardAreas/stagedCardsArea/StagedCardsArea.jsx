@@ -1,12 +1,13 @@
-import React, {useContext} from 'react';
-import {Context} from "../../../store/context";
+import React from 'react';
 import Card from "../../card/Card";
+import CardsController from "../../../store/cardsController";
+import {observer} from "mobx-react-lite";
 
-const StagedCardsArea = () => {
-    const {stagedCards} = useContext(Context)
+const StagedCardsArea = observer(() => {
+    const {stagedCards} = CardsController
     return (
         <>
-            {stagedCards.map(card=>(
+            {stagedCards.map(card => (
                 <Card
                     key={card.id}
                     card={card}
@@ -16,6 +17,6 @@ const StagedCardsArea = () => {
             ))}
         </>
     );
-};
+});
 
 export default StagedCardsArea;

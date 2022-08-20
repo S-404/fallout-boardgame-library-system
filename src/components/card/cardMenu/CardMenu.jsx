@@ -1,14 +1,15 @@
-import React, {useContext} from 'react';
-import {Context} from "../../../store/context";
+import React from 'react';
 import Marker from "./Marker";
+import CardsController from "../../../store/cardsController";
+import {observer} from "mobx-react-lite";
 
-const CardMenu = ({card, collection}) => {
+const CardMenu = observer (({card, collection}) => {
 
-    const {stagedCards, addCardFrom, stageCardFrom, moveCardToTrashFrom} = useContext(Context)
+    const {stagedCards, addCardFrom, stageCardFrom,putInTrashFrom} = CardsController
 
 
     const trashButtonHandler = () => {
-        moveCardToTrashFrom(card, collection)
+        putInTrashFrom(card, collection)
     }
     const stageButtonHandler = () => {
         stageCardFrom(card, collection)
@@ -35,6 +36,6 @@ const CardMenu = ({card, collection}) => {
 
         </div>
     );
-};
+});
 
 export default CardMenu;

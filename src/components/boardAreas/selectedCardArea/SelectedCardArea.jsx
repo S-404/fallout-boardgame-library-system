@@ -1,12 +1,13 @@
-import React, {useContext} from 'react';
-import {Context} from "../../../store/context";
+import React from 'react';
 import Card from "../../card/Card";
+import CardsController from "../../../store/cardsController";
+import {observer} from "mobx-react-lite";
 
-const SelectedCardArea = () => {
+const SelectedCardArea = observer ( () => {
 
-    const {selectedCard} = useContext(Context)
+    const {selectedCard} = CardsController
 
-    if(!selectedCard[0]?.id) return null
+    if (!selectedCard[0]?.id) return null
 
     return (
         <>
@@ -17,6 +18,6 @@ const SelectedCardArea = () => {
             />
         </>
     );
-};
+});
 
 export default SelectedCardArea;

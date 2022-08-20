@@ -1,13 +1,13 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import Deck from "../../deck/Deck";
 import questImg from '../../../assets/questCardBack.png'
-
-import {Context} from "../../../store/context";
 import QuestCardsMenu from "./QuestCardsMenu";
+import CardsController from "../../../store/cardsController";
+import {observer} from "mobx-react-lite";
 
-const QuestCardsArea = () => {
+const QuestCardsArea = observer(() => {
 
-    const {questsDeck} = useContext(Context)
+    const {questsDeck} = CardsController
 
     return (
         <Deck
@@ -17,6 +17,6 @@ const QuestCardsArea = () => {
             deck={questsDeck}
         />
     );
-};
+});
 
 export default QuestCardsArea;

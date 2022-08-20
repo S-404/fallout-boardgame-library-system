@@ -1,13 +1,13 @@
-import React ,{useContext} from 'react';
+import React from 'react';
+import CardsController from "../../../store/cardsController";
+import {observer} from "mobx-react-lite";
 
-import {Context} from "../../../store/context";
+const TrashListItem = observer ( ({card}) => {
 
-const TrashListItem = ({card}) => {
+    const {selectCardFrom, trash} = CardsController
 
-    const {selectCardFrom,trash} = useContext(Context)
-
-    const onClickHandler = () =>{
-        selectCardFrom(card,trash)
+    const onClickHandler = () => {
+        selectCardFrom(card, trash)
     }
 
     return (
@@ -16,6 +16,6 @@ const TrashListItem = ({card}) => {
             <button onClick={onClickHandler}>select</button>
         </div>
     );
-};
+});
 
 export default TrashListItem;
