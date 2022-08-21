@@ -2,10 +2,15 @@ import React from 'react';
 import Marker from "./Marker";
 import CardsController from "../../../store/cardsController";
 import {observer} from "mobx-react-lite";
+import DeleteIcon from "@mui/icons-material/Delete";
+import InputIcon from '@mui/icons-material/Input';
+import LibraryAddIcon from '@mui/icons-material/LibraryAdd';
+import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn';
+import MyIconButton from "../../UI/myButton/MyIconButton";
 
-const CardMenu = observer (({card, collection}) => {
+const CardMenu = observer(({card, collection}) => {
 
-    const {stagedCards, addCardFrom, stageCardFrom,putInTrashFrom} = CardsController
+    const {stagedCards, addCardFrom, stageCardFrom, putInTrashFrom} = CardsController
 
 
     const trashButtonHandler = () => {
@@ -20,20 +25,40 @@ const CardMenu = observer (({card, collection}) => {
 
     return (
         <div className='card__card-menu'>
-
-            <button onClick={trashButtonHandler}>trash</button>
+            <MyIconButton
+                titleText='delete'
+                icon={<DeleteIcon fontSize="inherit"/>}
+                onClick={trashButtonHandler}
+            />
 
             {collection !== stagedCards ?
-                <button onClick={stageButtonHandler}>stage</button>
+                <MyIconButton
+                    titleText='stage'
+                    icon={<InputIcon fontSize="inherit"/>}
+                    onClick={stageButtonHandler}
+                />
                 : null}
 
 
             {card.type !== 'quest' ?
-                <button onClick={addButtonHandler}>add</button>
+                <>
+                    <MyIconButton
+                        titleText='add'
+                        icon={<LibraryAddIcon fontSize="inherit"/>}
+                        onClick={addButtonHandler}
+                    />
+                    <MyIconButton
+                        titleText='put away'
+                        icon={<KeyboardReturnIcon fontSize="inherit"/>}
+                        onClick={() => {
+                        }}
+                    />
+
+                </>
+
                 : null}
 
             <Marker/>
-
         </div>
     );
 });
