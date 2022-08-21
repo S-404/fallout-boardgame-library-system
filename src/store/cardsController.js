@@ -57,6 +57,16 @@ class CardsController {
         }
     }
 
+    putAwayCardFrom = (card, fromCollection) => {
+
+        const removedCard = this.removeCardFrom(card.id, fromCollection);
+        const toCollection = this.defineCollectionByCardType(card.type)
+
+        if (removedCard) {
+            toCollection.unshift(removedCard)
+        }
+    }
+
     addCardFrom = (card, fromCollection) => {
 
         const removedCard = this.removeCardFrom(card.id, fromCollection);
