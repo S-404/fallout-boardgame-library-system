@@ -6,14 +6,15 @@ $card-height: 20em;
   border-radius: .5em;
   margin: .1em;
   width: $card-width + .5em;
-  height: $card-height + 1.6em;
+  height: $card-height + 2em;
   transition: transform ease-in .3s;
-  background-color: rgba(128, 128, 128, 0.43);
+  background-color: rgba(128, 128, 128, .4);
   //transform: scale(1.5);
   &:hover{
     transform: scale(1.7);
     transition: transform ease-in .1s;
-    background-color: #00dd00;
+    //background-color: #00dd00;
+    background-color: rgba(198, 198, 198, .9);
     z-index: 3;
   }
   .card__card-image-div{
