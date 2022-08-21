@@ -1,8 +1,10 @@
 import React from 'react';
 import CardsController from "../../../store/cardsController";
 import {observer} from "mobx-react-lite";
+import MyIconButton from "../../UI/myButton/MyIconButton";
+import RestoreFromTrashIcon from '@mui/icons-material/RestoreFromTrash';
 
-const TrashListItem = observer ( ({card}) => {
+const TrashListItem = observer(({card}) => {
 
     const {selectCardFrom, trash} = CardsController
 
@@ -13,7 +15,11 @@ const TrashListItem = observer ( ({card}) => {
     return (
         <div>
             <span>{card.name}</span>
-            <button onClick={onClickHandler}>select</button>
+            <MyIconButton
+                titleText='restore - select card'
+                icon={<RestoreFromTrashIcon />}
+                onClick={onClickHandler}
+            />
         </div>
     );
 });
