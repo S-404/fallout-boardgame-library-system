@@ -132,11 +132,11 @@ class CardsController {
             return card.expansion === 1 && withExpansion1
         })
 
-        this.wastelandDeck = this.questsDeck
-            .filter((card) => card.type === 'wasteland' && card.name === '★')
+        this.wastelandDeck = this.shuffleCards( this.questsDeck
+            .filter((card) => card.type === 'wasteland' && card.name === '★'))
 
-        this.settlementDeck = this.questsDeck
-            .filter((card) => card.type === 'settlement' && card.name === '★')
+        this.settlementDeck = this.shuffleCards( this.questsDeck
+            .filter((card) => card.type === 'settlement' && card.name === '★'))
 
         this.questsDeck = this.questsDeck
             .filter((card) => {
