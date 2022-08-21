@@ -6,7 +6,7 @@ const Card = ({card, collection}) => {
 
     const image = () => {
         try {
-            return require(`../../assets/cards/libraryCards/${card.num}.png`)
+            return require(`../../assets/cards/libraryCards/${card.name}.png`)
         } catch (e) {
             return ''
         }
@@ -19,7 +19,7 @@ const Card = ({card, collection}) => {
                 <img
                     className='card-image-div__image'
                     src={image()}
-                    alt={`card ${card.num}`}
+                    alt={`card ${card.name}`}
                 />
             </div>
         </div>

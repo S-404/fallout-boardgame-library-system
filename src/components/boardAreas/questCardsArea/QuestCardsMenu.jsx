@@ -12,7 +12,7 @@ const QuestCardsMenu = observer (() => {
 
     const onInputChange = (e) => {
         setCardNum(e.target.value)
-        const cardIndex = questsDeck.findIndex(card => card.num === e.target.value.padStart(3, '0'))
+        const cardIndex = questsDeck.findIndex(card => card.name === e.target.value.padStart(3, '0'))
         setSelectedCard(cardIndex !== -1 ? questsDeck[cardIndex] : null)
     }
 

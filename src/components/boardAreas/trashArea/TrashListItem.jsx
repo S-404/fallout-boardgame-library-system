@@ -12,7 +12,7 @@ const TrashListItem = observer ( ({card}) => {
 
     return (
         <div>
-            <span>{card.num}</span>
+            <span>{card.name}</span>
             <button onClick={onClickHandler}>select</button>
         </div>
     );

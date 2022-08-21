@@ -12,7 +12,7 @@ const StagedCardsArea = observer(() => {
                     key={card.id}
                     card={card}
                     collection={stagedCards}
-                    title={card.num}
+                    title={card.name}
                 />
             ))}
         </>
