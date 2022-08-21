@@ -3,10 +3,20 @@ import MySelect from "../UI/mySelect/MySelect";
 import {observer} from "mobx-react-lite";
 import SettingsController from "../../store/settingsController";
 import CardsController from "../../store/cardsController";
+import MyCheckbox from "../UI/myCheckbox/MyCheckbox";
+import Button from '@mui/material/Button';
 
 const GameSettings = observer(() => {
 
-    const {playersQty, setPlayersQty, scenario, setScenario, expansion1, setExpansion1, setSettingsModal} = SettingsController
+    const {
+        playersQty,
+        setPlayersQty,
+        scenario,
+        setScenario,
+        expansion1,
+        setExpansion1,
+        setSettingsModal
+    } = SettingsController
     const {startScenario} = CardsController
 
     const selectScenarioHandler = (e) => {
@@ -56,19 +66,19 @@ const GameSettings = observer(() => {
                     onChange={selectScenarioHandler}
                     value={scenario}
                 />
-                <div>
-                    <label>with expansion</label>
-                    <input
-                        type='checkbox'
-                        checked={expansion1}
-                        onChange={setExpansion1}
-                    />
 
-                </div>
-                <button
+                <MyCheckbox
+                    labelText='with expansion1'
+                    isChecked={expansion1}
+                    onChange={setExpansion1}
+                />
+
+                <Button
+                    variant="contained"
                     onClick={buttonStartHandler}
-                >Start
-                </button>
+                >
+                    Start
+                </Button>
             </div>
         </div>
     );
