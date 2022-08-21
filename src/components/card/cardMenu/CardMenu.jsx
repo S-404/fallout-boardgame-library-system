@@ -10,11 +10,14 @@ import MyIconButton from "../../UI/myButton/MyIconButton";
 
 const CardMenu = observer(({card, collection}) => {
 
-    const {stagedCards, addCardFrom, stageCardFrom, putInTrashFrom} = CardsController
+    const {stagedCards, addCardFrom, stageCardFrom, putInTrashFrom,putAwayCardFrom} = CardsController
 
 
     const trashButtonHandler = () => {
         putInTrashFrom(card, collection)
+    }
+    const putAwayButtonHandler = () => {
+        putAwayCardFrom(card, collection)
     }
     const stageButtonHandler = () => {
         stageCardFrom(card, collection)
@@ -50,8 +53,7 @@ const CardMenu = observer(({card, collection}) => {
                     <MyIconButton
                         titleText='put away'
                         icon={<KeyboardReturnIcon fontSize="inherit"/>}
-                        onClick={() => {
-                        }}
+                        onClick={putAwayButtonHandler}
                     />
 
                 </>
