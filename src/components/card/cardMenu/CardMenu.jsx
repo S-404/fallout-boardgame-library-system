@@ -60,7 +60,7 @@ const CardMenu = observer(({card, collection}) => {
 
                 : null}
 
-            <Marker/>
+            <Marker card={card}/>
         </div>
     );
 });

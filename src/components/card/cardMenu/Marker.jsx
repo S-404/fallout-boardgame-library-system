@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {styled} from '@mui/material/styles';
 import Tooltip, {tooltipClasses} from '@mui/material/Tooltip';
 import CircleIcon from '@mui/icons-material/Circle';
@@ -17,10 +17,19 @@ const PickColorsTooltip = styled(({className, ...props}) => (
     },
 }));
 
-export default function Marker() {
+export default function Marker({card}) {
 
     const [markerColor, setMarkerColor] = useState('gray')
     const colors = ['red', 'green', 'blue', 'orange', 'gray']
+
+    const cardColorHandler = (color) =>{
+        setMarkerColor(color)
+        card.markerColor = color
+    }
+
+    useEffect(()=>{
+        if(card?.markerColor) setMarkerColor(card.markerColor)
+    },[])
 
     return (
         <div>
@@ -31,7 +40,7 @@ export default function Marker() {
                         {colors.map(color => (
                             <IconButton
                                 key={`marker_color_${color}`}
-                                onClick={() => setMarkerColor(color)}
+                                onClick={() => cardColorHandler(color)}
                             >
                                 <CircleIcon sx={{color}}/>
                             </IconButton>
