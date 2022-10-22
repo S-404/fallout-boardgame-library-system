@@ -22,7 +22,8 @@ export default function Marker({card}) {
     const [markerColor, setMarkerColor] = useState('gray')
     const colors = ['red', 'green', 'blue', 'orange', 'gray']
 
-    const cardColorHandler = (color) =>{
+    const cardColorHandler = (e,color) =>{
+        e.stopPropagation()
         setMarkerColor(color)
         card.markerColor = color
     }
@@ -40,7 +41,7 @@ export default function Marker({card}) {
                         {colors.map(color => (
                             <IconButton
                                 key={`marker_color_${color}`}
-                                onClick={() => cardColorHandler(color)}
+                                onClick={(e) => cardColorHandler(e,color)}
                             >
                                 <CircleIcon sx={{color}}/>
                             </IconButton>

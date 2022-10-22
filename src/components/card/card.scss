@@ -10,11 +10,16 @@ $card-height: 20em;
   transition: transform ease-in .3s;
   background-color: rgba(128, 128, 128, .4);
   //transform: scale(1.5);
-  &:hover{
+  &_clicked{
     transform: scale(1.7);
     transition: transform ease-in .1s;
     //background-color: #00dd00;
     background-color: rgba(198, 198, 198, .9);
+    z-index: 3;
+  }
+  &_:hover{
+    transform: scale(1.05);
+    transition: transform ease-in .1s;
     z-index: 3;
   }
   .card__card-image-div{
