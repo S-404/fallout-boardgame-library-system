@@ -1,5 +1,6 @@
 import {makeAutoObservable} from "mobx";
-
+import scenariosOptionsData from '../store/collection/scenariosOptions.json'
+import playersQtyOptionsData from '../store/collection/playersQtyOptions.json'
 
 class SettingsController {
 
@@ -7,6 +8,9 @@ class SettingsController {
     scenario = 0
     expansion1 = true
     settingsModal = true
+
+    scenariosOptions = scenariosOptionsData
+    playersQtyOptions = playersQtyOptionsData
 
     constructor() {
         makeAutoObservable(this)

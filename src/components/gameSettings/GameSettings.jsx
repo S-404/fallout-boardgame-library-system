@@ -15,7 +15,9 @@ const GameSettings = observer(() => {
         setScenario,
         expansion1,
         setExpansion1,
-        setSettingsModal
+        setSettingsModal,
+        scenariosOptions,
+        playersQtyOptions
     } = SettingsController
     const {startScenario} = CardsController
 
@@ -36,20 +38,6 @@ const GameSettings = observer(() => {
         })
         setSettingsModal(false)
     }
-
-    const scenariosOptions = [
-        {name: 'first', value: 0},
-        {name: 'second', value: 1},
-        {name: 'third', value: 2},
-        {name: 'fourth', value: 3}
-    ]
-
-    const playersQtyOptions = [
-        {name: '1 player', value: 1},
-        {name: '2 players', value: 2},
-        {name: '3 players', value: 3},
-        {name: '4 players', value: 4}
-    ]
 
     return (
         <div>
