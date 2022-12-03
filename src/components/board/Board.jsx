@@ -12,9 +12,14 @@ const Board = () => {
         <div className='board-container'>
 
             <div className='board-container__decks'>
-                <QuestCardsArea/>
-                <EncounterCardsArea/>
+
+                <div className='decks__decks-area'>
+                    <h4 className='decks__header'>Decks:</h4>
+                    <QuestCardsArea/>
+                    <EncounterCardsArea/>
+                </div>
             </div>
+
 
             <div className='board-container__cards'>
 

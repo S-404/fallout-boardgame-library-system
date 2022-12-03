@@ -10,7 +10,7 @@ import {observer} from "mobx-react-lite";
 const EncounterCardsArea = observer(() => {
     const {wastelandDeck, settlementDeck, vault84Deck} = CardsController
     return (
-        <div className='decks__encounter-cards'>
+        <div className='decks-area__encounter-cards'>
             <Deck
                 name='Wasteland'
                 backImg={wastelandCardBack}

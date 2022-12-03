@@ -1,52 +1,73 @@
 @import "src/components/card/card";
 
-@mixin cards-div(){
+@mixin cards-div() {
   max-width: 60em;
-  min-width: $card-width + 2.5em ;
-  min-height: $card-height + 4em;
+  min-width: $card-width + 2.5em;
+  min-height: $card-height + 4em;;
+
+  transition: all ease-in .3s;
+}
+
+@mixin area-div() {
   border-radius: 1em;
   padding: 1em;
   border: 1px gray solid;
   margin: 1em .5em;
-  position: relative;
+  position: relative
+}
 
-  transition: all ease-in .3s;
+@mixin area-header() {
+  position: absolute;
+  top: -1.3em;
 }
 
 .board-container {
   display: flex;
   flex-direction: column;
-  .board-container__decks{
-    display: flex;
-    flex-direction: row;
-    min-height: 14em;
-    .decks__encounter-cards{
+
+  .board-container__decks {
+    @include area-div;
+
+    .decks__decks-area {
       display: flex;
       flex-direction: row;
+      min-height: 14em;
+
+
+      .decks-area__encounter-cards {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+
+    .decks__header {
+      @include area-header;
     }
   }
-  .board-container__cards{
+
+  .board-container__cards {
     display: flex;
     flex-direction: row;
     //z-index: 0;
 
-    .cards__selected-card{
+    .cards__selected-card {
       @include cards-div;
+      @include area-div;
       max-height: $card-height + 4em;
       z-index: 1;
     }
 
-    .cards__staged-cards{
+    .cards__staged-cards {
       @include cards-div;
+      @include area-div;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       //z-index: 1;
     }
-    .cards__header{
-      position: absolute;
-      top: -1.3em;
 
+    .cards__header {
+      @include area-header;
     }
   }
 
